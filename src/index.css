@@ -1,68 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  /* hsl 
+  Hue (the pure color like red or green), 
+  Saturation (the color's intensity or purity, with 0% being gray and 100% being full color)
+  Lightness (how light or dark the color is, where 0% is black and 100% is white) */
+  --color-border: hsl(var(--border));
+  --color-background: var(--background);
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: var(--card);
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    background: linear-gradient(142deg, #ee9fad 10%, #e07fd0 24%, #e670f0 40%, #ae5cf6 60%, #3f335b 100%);
+    /* background: linear-gradient(142deg, oklch(71.4% 0.203 305.504), oklch(71.4% 0.203 305.504) ); */
+    --foreground: 222 47% 11%;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+    --border: 214 32% 91%;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --card: #ffeefe;
+  }
+
+.dark {
+    background: linear-gradient(142deg, #3e4848 15%, #273939 40%, #192828 70%, #0f1b1b 100%);
+    --foreground: 213 31% 91%;
+
+    --border: 214 32% 91%;
+
+    --card: #0f2020;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+@utility text-glow {
+  @apply relative;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@utility card-hover {
+  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
+@utility gradient-border {
+  @apply relative;
+  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
+  background-clip: padding-box;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+@utility cosmic-button {
+  @apply px-6 py-2 rounded-md;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+#root {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
 }
