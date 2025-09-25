@@ -9,12 +9,16 @@
   --color-background: var(--background);
   --color-foreground: hsl(var(--foreground));
 
+  --color-background-check : var(--background);
+
   --color-card: var(--card);
 }
 
 :root {
-    background: linear-gradient(142deg, #ee9fad 10%, #e07fd0 24%, #e670f0 40%, #ae5cf6 60%, #3f335b 100%);
+    background: linear-gradient(142deg, #da92ab 8%, #c66bb7 21%, #c963d2 30%, #ae5cf6 60%, #3f335b 100%);
     /* background: linear-gradient(142deg, oklch(71.4% 0.203 305.504), oklch(71.4% 0.203 305.504) ); */
+
+    --background-check : black;
     --foreground: 222 47% 11%;
 
     --border: 214 32% 91%;
@@ -23,7 +27,7 @@
   }
 
 .dark {
-    background: linear-gradient(142deg, #3e4848 15%, #273939 40%, #192828 70%, #0f1b1b 100%);
+    background: linear-gradient(142deg, #4a5555 15%, #2d4242 40%, #1d2e2e 70%, #0f1b1b 100%);
     --foreground: 213 31% 91%;
 
     --border: 214 32% 91%;
