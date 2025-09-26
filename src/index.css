@@ -15,7 +15,7 @@
 }
 
 :root {
-    background: linear-gradient(142deg, #da92ab 8%, #c66bb7 21%, #c963d2 30%, #ae5cf6 60%, #3f335b 100%);
+    background: linear-gradient(142deg, #da92ab 0%, #c66bb7 15%, #c963d2 20%, #ae5cf6 45%, #3f335b 100%);
     /* background: linear-gradient(142deg, oklch(71.4% 0.203 305.504), oklch(71.4% 0.203 305.504) ); */
 
     --background-check : black;
@@ -27,12 +27,12 @@
   }
 
 .dark {
-    background: linear-gradient(142deg, #4a5555 15%, #2d4242 40%, #1d2e2e 70%, #0f1b1b 100%);
-    --foreground: 213 31% 91%;
+    background: linear-gradient(142deg, #475353 0%, #263838 30%, #1d2e2e 80%, #142323 100%);
+    --foreground: 213 31% 20%;
 
     --border: 214 32% 91%;
 
-    --card: #0f2020;
+    --card: #4b5358;
   }
 
   * {
